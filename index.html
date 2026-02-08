@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de San Valentín para Kiutza</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ff6b8b, #ff8e53);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        header {
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #e91e63;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subtitle {
+            color: #ff4081;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .heart-icon {
+            color: #ff4081;
+            font-size: 3rem;
+            margin: 20px 0;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            5% { transform: scale(1.1); }
+            10% { transform: scale(1); }
+            15% { transform: scale(1.1); }
+            20% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+        
+        .message {
+            background-color: #ffe6ee;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid #ff4081;
+        }
+        
+        .message p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .name {
+            color: #e91e63;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .buttons-container {
+            position: relative;
+            min-height: 120px;
+            margin: 40px 0;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 18px 45px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            min-width: 160px;
+        }
+        
+        .btn-yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .btn-yes:hover {
+            background-color: #45a049;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-no {
+            background-color: #f44336;
+            color: white;
+            position: relative;
+            transition: all 0.1s ease;
+        }
+        
+        .btn-no:hover {
+            background-color: #d32f2f;
+        }
+        
+        .counter {
+            margin-top: 15px;
+            color: #777;
+            font-size: 1rem;
+        }
+        
+        .counter span {
+            font-weight: bold;
+            color: #e91e63;
+        }
+        
+        .response-message {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: none;
+            animation: fadeIn 1s;
+        }
+        
+        .response-message i {
+            margin-right: 10px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .instructions {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #f0f8ff;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        
+        footer {
+            margin-top: 30px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .message p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                padding: 15px 35px;
+                font-size: 1.3rem;
+                min-width: 140px;
+            }
+            
+            .buttons {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .buttons-container {
+                min-height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-heart"></i> San Valentín <i class="fas fa-heart"></i></h1>
+            <div class="subtitle">Una invitación muy especial</div>
+            <div class="heart-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+        </header>
+        
+        <div class="message">
+            <p>Hola <span class="name">Kiutza</span>,</p>
+            <p>Este 14 de febrero, me gustaría pasar un tiempo especial contigo.</p>
+            <p>¿Me harías el honor de ser mi San Valentín?</p>
+        </div>
+        
+        <div class="buttons-container">
+            <div class="counter">Intentos en el botón "No": <span id="counter">0</span>/10</div>
+            <div class="buttons">
+                <button class="btn btn-yes" id="yesBtn">¡Sí! <i class="fas fa-heart"></i></button>
+                <button class="btn btn-no" id="noBtn">No <i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        
+        <div class="response-message" id="responseMessage">
+            <i class="fas fa-check-circle"></i> ¡Gracias por aceptar! Será un día especial.
+        </div>
+        
+        <div class="instructions">
+            <p><i class="fas fa-info-circle"></i> Intenta hacer clic en el botón "No" y verás lo que pasa. Después de 10 intentos, se convertirá en "Sí".</p>
+        </div>
+        
+        <footer>
+            <p>Hecho con <i class="fas fa-heart" style="color:#e91e63;"></i> para Kiutza</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const yesBtn = document.getElementById('yesBtn');
+            const noBtn = document.getElementById('noBtn');
+            const counterElement = document.getElementById('counter');
+            const responseMessage = document.getElementById('responseMessage');
+            const buttonsContainer = document.querySelector('.buttons-container');
+            
+            let counter = 0;
+            const maxAttempts = 10;
+            
+            // Función para generar una posición aleatoria dentro del contenedor
+            function getRandomPosition() {
+                const containerWidth = buttonsContainer.clientWidth;
+                const containerHeight = buttonsContainer.clientHeight;
+                const btnWidth = noBtn.clientWidth;
+                const btnHeight = noBtn.clientHeight;
+                
+                // Asegurarnos de que el botón no se salga del contenedor
+                const maxX = containerWidth - btnWidth - 20;
+                const maxY = containerHeight - btnHeight - 20;
+                
+                // Generar posición aleatoria
+                const randomX = Math.max(10, Math.floor(Math.random() * maxX));
+                const randomY = Math.max(10, Math.floor(Math.random() * maxY));
+                
+                return { x: randomX, y: randomY };
+            }
+            
+            // Función para mover el botón "No" a una posición aleatoria
+            function moveNoButton() {
+                if (counter >= maxAttempts) return;
+                
+                const newPosition = getRandomPosition();
+                
+                // Aplicar posición absoluta al botón
+                noBtn.style.position = 'absolute';
+                noBtn.style.left = `${newPosition.x}px`;
+                noBtn.style.top = `${newPosition.y}px`;
+                
+                // Incrementar contador
+                counter++;
+                counterElement.textContent = counter;
+                
+                // Si llegamos al máximo de intentos, convertir "No" en "Sí"
+                if (counter >= maxAttempts) {
+                    // Cambiar el texto y estilo del botón "No"
+                    noBtn.textContent = "¡Sí!";
+                    noBtn.innerHTML = "¡Sí! <i class='fas fa-heart'></i>";
+                    noBtn.classList.remove('btn-no');
+                    noBtn.classList.add('btn-yes');
+                    
+                    // Eliminar el evento de movimiento
+                    noBtn.removeEventListener('click', handleNoClick);
+                    noBtn.removeEventListener('mouseover', handleNoHover);
+                    
+                    // Ahora el botón "No" convertido en "Sí" también acepta la invitación
+                    noBtn.addEventListener('click', handleYesClick);
+                    
+                    // Mostrar mensaje de respuesta
+                    responseMessage.style.display = 'block';
+                    responseMessage.textContent = "¡Finalmente aceptaste! Sabía que dirías que sí. ❤️";
+                }
+            }
+            
+            // Función para manejar el clic en "No"
+            function handleNoClick(e) {
+                e.preventDefault();
+                moveNoButton();
+            }
+            
+            // Función para manejar el hover en "No" (opcional, para hacerlo más difícil)
+            function handleNoHover() {
+                if (counter >= maxAttempts - 3 && counter < maxAttempts) {
+                    // En los últimos 3 intentos, también se mueve al pasar el mouse
+                    moveNoButton();
+                }
+            }
+            
+            // Función para manejar el clic en "Sí"
+            function handleYesClick() {
+                responseMessage.style.display = 'block';
+                
+                // Ocultar los botones después de aceptar
+                document.querySelector('.buttons').style.display = 'none';
+                document.querySelector('.counter').style.display = 'none';
+            }
+            
+            // Asignar eventos
+            noBtn.addEventListener('click', handleNoClick);
+            noBtn.addEventListener('mouseover', handleNoHover);
+            yesBtn.addEventListener('click', handleYesClick);
+            
+            // Inicializar contador
+            counterElement.textContent = counter;
+        });
+    </script>
+</body>
+</html>
